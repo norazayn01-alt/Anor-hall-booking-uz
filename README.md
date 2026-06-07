@@ -1,8 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# To'yxona Booking Website | To'yxonalarni Band Qilish Veb-sayti
 
-## Getting Started
+A modern web application for booking wedding halls (To'yxona). Built with Next.js, this platform provides an elegant user interface for browsing, selecting, and reserving wedding venues.
+
+To'yxonalarni band qilish uchun zamonaviy veb-ilova. Next.js yordamida yaratilgan ushbu platforma to'yxonalarni ko'rish, tanlash va band qilish uchun qulay va chiroyli foydalanuvchi interfeysini taqdim etadi.
+
+## Features | Imkoniyatlar
+- 🇬🇧 Browse available wedding halls | 🇺🇿 Mavjud to'yxonalarni ko'rish
+- 🇬🇧 View details, pricing, and availability | 🇺🇿 To'yxona tafsilotlari, narxlari va bo'sh kunlarini bilish
+- 🇬🇧 Make reservations and bookings | 🇺🇿 Joy band qilish va buyurtma berish
+- 🇬🇧 Modern, responsive, and animated user interface | 🇺🇿 Zamonaviy, moslashuvchan va animatsiyali interfeys
+
+## Tech Stack | Texnologiyalar
+- **Framework | Freymvork:** Next.js 16 (App Router)
+- **Styling | Stil:** Tailwind CSS, Shadcn UI
+- **Animations | Animatsiyalar:** Framer Motion, GSAP
+- **Database | Ma'lumotlar bazasi:** PostgreSQL (pg)
+
+## Getting Started | Boshlash
 
 First, run the development server:
+Avval, dasturlash serverini ishga tushiring:
 
 ```bash
 npm run dev
@@ -15,22 +32,4 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Natijani ko'rish uchun brauzerda [http://localhost:3000](http://localhost:3000) manzilini oching.

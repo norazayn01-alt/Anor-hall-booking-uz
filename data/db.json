@@ -1,0 +1,2261 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ziyoda",
+      "surname": "Kidirova",
+      "email": "admin@anor.uz",
+      "username": "admin",
+      "password": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+      "role": "admin",
+      "verified": true
+    },
+    {
+      "id": 2,
+      "name": "Sardor",
+      "surname": "Karimov",
+      "email": "sardor@owner.uz",
+      "username": "sardor",
+      "password": "43a0d17178a9d26c9e0fe9a74b0b45e38d32f27aed887a008a54bf6e033bf7b9",
+      "role": "owner",
+      "verified": true
+    },
+    {
+      "id": 3,
+      "name": "Shahzoda",
+      "surname": "Kidirova",
+      "email": "shahzodakidirovaa@gmail.com",
+      "username": "shahzoda",
+      "password": "51f1761574813cb7ed68b65c6f93dae7391f2e16840a2f38fc14c1a6b2a8f5c7",
+      "role": "owner",
+      "verified": false,
+      "otp": "166837"
+    },
+    {
+      "id": 4,
+      "name": "Shahzoda",
+      "surname": "Kidirova",
+      "email": "norazayn01@gmail.com",
+      "username": "norazayn",
+      "password": "ed29d105ffea13a54f630752ddd9c81f0a579e613a80475f88d1fcf337b875d6",
+      "role": "user",
+      "verified": true
+    }
+  ],
+  "toyxonalar": [
+    {
+      "id": 1,
+      "tuman": "Bektemir",
+      "title": "Sarbon To'yxonasi",
+      "price": 550000,
+      "image": "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+      "images": [
+        "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height"
+      ],
+      "location": "Toshkent, Bektemir tumani, Husayn Boyqaro ko'chasi",
+      "description": "Sarbon tantanalar saroyi sizning unutilmas kunlaringizni a'lo darajada o'tkazishga xizmat qiladi. Elegant interyer, professional xizmatlar.",
+      "phoneNumber": "+998 33 444 55 66",
+      "status": "tasdiqlangan",
+      "capacity": 300,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 2,
+      "tuman": "Bektemir",
+      "title": "Oq saroy To'yxonasi",
+      "price": 750000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent, Bektemir tumani, O'zbekiston ko'chasi",
+      "description": "Oq Saroy to'yxonasi — hashamatli dizayn va betakror fayzga ega keng marosimlar zali.",
+      "phoneNumber": "+998 90 123 45 67",
+      "status": "tasdiqlangan",
+      "capacity": 500,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 3,
+      "tuman": "Mirzo Ulug'bek",
+      "title": "Marhamat To'yxonasi",
+      "price": 500000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height"
+      ],
+      "location": "Toshkent, Mirzo Ulug'bek tumani, Ziyolilar ko'chasi",
+      "description": "Marhamat to'yxonasi — oilaviy shinam to'ylar va marosimlar uchun qulay va arzon maskan.",
+      "phoneNumber": "+998 90 123 45 67",
+      "status": "tasdiqlangan",
+      "capacity": 250,
+      "ownerId": null,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 4,
+      "tuman": "Bektemir",
+      "title": "Elegant To'yxonasi",
+      "price": 620000,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg"
+      ],
+      "location": "Toshkent, Bektemir tumani, Majnuntol ko'chasi",
+      "description": "Elegant to'yxonasi — zamonaviy va yorug' rangdagi katta o'rindiqli tantanalar zali.",
+      "phoneNumber": "+998 90 123 45 67",
+      "status": "tasdiqlangan",
+      "capacity": 450,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 5,
+      "tuman": "Bektemir",
+      "title": "Bahor To'yxonasi",
+      "price": 480000,
+      "image": "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+      "images": [
+        "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg"
+      ],
+      "location": "Toshkent, Bektemir tumani, Oltintopgan ko'chasi",
+      "description": "Bahor to'yxonasi — chiroyli dekoratsiya va ajoyib akustika tizimiga ega.",
+      "phoneNumber": "+998 90 123 45 68",
+      "status": "tasdiqlangan",
+      "capacity": 350,
+      "ownerId": null,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 6,
+      "tuman": "Mirzo Ulug'bek",
+      "title": "Mumtoz to'yxonasi",
+      "price": 800000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent, Mirzo Ulug'bek tumani, Qorasu bo'yi ko'chasi",
+      "description": "Mumtoz to'yxonasi — hashamatli bezaklar, nafis interyer va a'lo xizmat ko'rsatish sifati.",
+      "phoneNumber": "+998 90 777 66 55",
+      "status": "tasdiqlangan",
+      "capacity": 600,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 7,
+      "tuman": "Mirobod",
+      "title": "Mirobod Tantanalar Saroyi (Mirobod)",
+      "price": 850000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Mirobod tumani, Markaziy ko'cha 77",
+      "description": "Mirobod Tantanalar Saroyi (Mirobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 118 58 92",
+      "status": "tasdiqlangan",
+      "capacity": 200,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 8,
+      "tuman": "Mirobod",
+      "title": "Mirobod Grand Hall (Mirobod)",
+      "price": 680000,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Mirobod tumani, Markaziy ko'cha 33",
+      "description": "Mirobod Grand Hall (Mirobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 967 21 90",
+      "status": "tasdiqlangan",
+      "capacity": 400,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 9,
+      "tuman": "Mirobod",
+      "title": "Mirobod Royal Palace (Mirobod)",
+      "price": 560000,
+      "image": "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+      "images": [
+        "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Mirobod tumani, Markaziy ko'cha 2",
+      "description": "Mirobod Royal Palace (Mirobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 471 91 47",
+      "status": "tasdiqlangan",
+      "capacity": 400,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 10,
+      "tuman": "Mirzo Ulug'bek",
+      "title": "Mirzo Ulug'bek Tantanalar Saroyi (Mirzo Ulug'bek)",
+      "price": 660000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Mirzo Ulug'bek tumani, Markaziy ko'cha 138",
+      "description": "Mirzo Ulug'bek Tantanalar Saroyi (Mirzo Ulug'bek) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 950 40 31",
+      "status": "tasdiqlangan",
+      "capacity": 1000,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 11,
+      "tuman": "Olmazor",
+      "title": "Olmazor Tantanalar Saroyi (Olmazor)",
+      "price": 680000,
+      "image": "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+      "images": [
+        "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Olmazor tumani, Markaziy ko'cha 109",
+      "description": "Olmazor Tantanalar Saroyi (Olmazor) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 888 88 47",
+      "status": "tasdiqlangan",
+      "capacity": 500,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 12,
+      "tuman": "Olmazor",
+      "title": "Olmazor Grand Hall (Olmazor)",
+      "price": 530000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Olmazor tumani, Markaziy ko'cha 93",
+      "description": "Olmazor Grand Hall (Olmazor) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 500 91 81",
+      "status": "tasdiqlangan",
+      "capacity": 350,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 13,
+      "tuman": "Olmazor",
+      "title": "Olmazor Royal Palace (Olmazor)",
+      "price": 900000,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Olmazor tumani, Markaziy ko'cha 137",
+      "description": "Olmazor Royal Palace (Olmazor) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 632 58 25",
+      "status": "tasdiqlangan",
+      "capacity": 400,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 14,
+      "tuman": "Sergeli",
+      "title": "Sergeli Tantanalar Saroyi (Sergeli)",
+      "price": 620000,
+      "image": "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+      "images": [
+        "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Sergeli tumani, Markaziy ko'cha 107",
+      "description": "Sergeli Tantanalar Saroyi (Sergeli) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 860 56 92",
+      "status": "tasdiqlangan",
+      "capacity": 300,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 15,
+      "tuman": "Sergeli",
+      "title": "Sergeli Grand Hall (Sergeli)",
+      "price": 750000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Sergeli tumani, Markaziy ko'cha 123",
+      "description": "Sergeli Grand Hall (Sergeli) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 675 12 37",
+      "status": "tasdiqlangan",
+      "capacity": 700,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 16,
+      "tuman": "Sergeli",
+      "title": "Sergeli Royal Palace (Sergeli)",
+      "price": 810000,
+      "image": "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+      "images": [
+        "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Sergeli tumani, Markaziy ko'cha 50",
+      "description": "Sergeli Royal Palace (Sergeli) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 180 66 40",
+      "status": "tasdiqlangan",
+      "capacity": 700,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 17,
+      "tuman": "Uchtepa",
+      "title": "Uchtepa Tantanalar Saroyi (Uchtepa)",
+      "price": 610000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Uchtepa tumani, Markaziy ko'cha 129",
+      "description": "Uchtepa Tantanalar Saroyi (Uchtepa) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 580 53 41",
+      "status": "tasdiqlangan",
+      "capacity": 300,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 18,
+      "tuman": "Uchtepa",
+      "title": "Uchtepa Grand Hall (Uchtepa)",
+      "price": 880000,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Uchtepa tumani, Markaziy ko'cha 66",
+      "description": "Uchtepa Grand Hall (Uchtepa) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 451 48 47",
+      "status": "tasdiqlangan",
+      "capacity": 700,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 19,
+      "tuman": "Uchtepa",
+      "title": "Uchtepa Royal Palace (Uchtepa)",
+      "price": 820000,
+      "image": "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+      "images": [
+        "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Uchtepa tumani, Markaziy ko'cha 73",
+      "description": "Uchtepa Royal Palace (Uchtepa) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 717 22 44",
+      "status": "tasdiqlangan",
+      "capacity": 350,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 20,
+      "tuman": "Yakkasaroy",
+      "title": "Yakkasaroy Tantanalar Saroyi (Yakkasaroy)",
+      "price": 740000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yakkasaroy tumani, Markaziy ko'cha 33",
+      "description": "Yakkasaroy Tantanalar Saroyi (Yakkasaroy) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 354 72 24",
+      "status": "tasdiqlangan",
+      "capacity": 400,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 21,
+      "tuman": "Yakkasaroy",
+      "title": "Yakkasaroy Grand Hall (Yakkasaroy)",
+      "price": 900000,
+      "image": "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+      "images": [
+        "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yakkasaroy tumani, Markaziy ko'cha 30",
+      "description": "Yakkasaroy Grand Hall (Yakkasaroy) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 625 19 80",
+      "status": "tasdiqlangan",
+      "capacity": 400,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 22,
+      "tuman": "Yakkasaroy",
+      "title": "Yakkasaroy Royal Palace (Yakkasaroy)",
+      "price": 610000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yakkasaroy tumani, Markaziy ko'cha 129",
+      "description": "Yakkasaroy Royal Palace (Yakkasaroy) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 883 20 18",
+      "status": "tasdiqlangan",
+      "capacity": 200,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 23,
+      "tuman": "Yangihayot",
+      "title": "Yangihayot Tantanalar Saroyi (Yangihayot)",
+      "price": 800000,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yangihayot tumani, Markaziy ko'cha 67",
+      "description": "Yangihayot Tantanalar Saroyi (Yangihayot) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 450 79 85",
+      "status": "tasdiqlangan",
+      "capacity": 200,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 24,
+      "tuman": "Yangihayot",
+      "title": "Yangihayot Grand Hall (Yangihayot)",
+      "price": 660000,
+      "image": "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+      "images": [
+        "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yangihayot tumani, Markaziy ko'cha 17",
+      "description": "Yangihayot Grand Hall (Yangihayot) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 180 42 98",
+      "status": "tasdiqlangan",
+      "capacity": 800,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 25,
+      "tuman": "Yangihayot",
+      "title": "Yangihayot Royal Palace (Yangihayot)",
+      "price": 900000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yangihayot tumani, Markaziy ko'cha 105",
+      "description": "Yangihayot Royal Palace (Yangihayot) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 461 18 61",
+      "status": "tasdiqlangan",
+      "capacity": 150,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 26,
+      "tuman": "Yashnobod",
+      "title": "Yashnobod Tantanalar Saroyi (Yashnobod)",
+      "price": 490000,
+      "image": "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+      "images": [
+        "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yashnobod tumani, Markaziy ko'cha 54",
+      "description": "Yashnobod Tantanalar Saroyi (Yashnobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 821 54 63",
+      "status": "tasdiqlangan",
+      "capacity": 700,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 27,
+      "tuman": "Yashnobod",
+      "title": "Yashnobod Grand Hall (Yashnobod)",
+      "price": 790000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yashnobod tumani, Markaziy ko'cha 98",
+      "description": "Yashnobod Grand Hall (Yashnobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 331 61 77",
+      "status": "tasdiqlangan",
+      "capacity": 150,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 28,
+      "tuman": "Yashnobod",
+      "title": "Yashnobod Royal Palace (Yashnobod)",
+      "price": 750000,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yashnobod tumani, Markaziy ko'cha 53",
+      "description": "Yashnobod Royal Palace (Yashnobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 276 15 40",
+      "status": "tasdiqlangan",
+      "capacity": 400,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 29,
+      "tuman": "Yunusobod",
+      "title": "Yunusobod Tantanalar Saroyi (Yunusobod)",
+      "price": 560000,
+      "image": "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+      "images": [
+        "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yunusobod tumani, Markaziy ko'cha 17",
+      "description": "Yunusobod Tantanalar Saroyi (Yunusobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 318 45 62",
+      "status": "tasdiqlangan",
+      "capacity": 200,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 30,
+      "tuman": "Yunusobod",
+      "title": "Yunusobod Grand Hall (Yunusobod)",
+      "price": 540000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yunusobod tumani, Markaziy ko'cha 69",
+      "description": "Yunusobod Grand Hall (Yunusobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 305 32 39",
+      "status": "tasdiqlangan",
+      "capacity": 350,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 31,
+      "tuman": "Yunusobod",
+      "title": "Yunusobod Royal Palace (Yunusobod)",
+      "price": 810000,
+      "image": "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+      "images": [
+        "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Yunusobod tumani, Markaziy ko'cha 147",
+      "description": "Yunusobod Royal Palace (Yunusobod) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 538 85 55",
+      "status": "tasdiqlangan",
+      "capacity": 700,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 32,
+      "tuman": "Shayxontohur",
+      "title": "Shayxontohur Tantanalar Saroyi (Shayxontohur)",
+      "price": 660000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Shayxontohur tumani, Markaziy ko'cha 123",
+      "description": "Shayxontohur Tantanalar Saroyi (Shayxontohur) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 457 85 68",
+      "status": "tasdiqlangan",
+      "capacity": 350,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 33,
+      "tuman": "Shayxontohur",
+      "title": "Shayxontohur Grand Hall (Shayxontohur)",
+      "price": 640000,
+      "image": "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+      "images": [
+        "https://5.imimg.com/data5/SELLER/Default/2024/11/467370693/NY/LR/GW/97164208/banquet-hall-design-ideas.jpeg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Shayxontohur tumani, Markaziy ko'cha 110",
+      "description": "Shayxontohur Grand Hall (Shayxontohur) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 800 86 85",
+      "status": "tasdiqlangan",
+      "capacity": 800,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 34,
+      "tuman": "Shayxontohur",
+      "title": "Shayxontohur Royal Palace (Shayxontohur)",
+      "price": 610000,
+      "image": "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+      "images": [
+        "https://p.turbosquid.com/ts-thumb/te/QzZiCO/EW/z03/jpg/1696339999/1920x1080/fit_q87/616417ef9cd10af905b5c534324d4df72e9d11b8/z03.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Shayxontohur tumani, Markaziy ko'cha 55",
+      "description": "Shayxontohur Royal Palace (Shayxontohur) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 683 57 98",
+      "status": "tasdiqlangan",
+      "capacity": 700,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 35,
+      "tuman": "Chilonzor",
+      "title": "Chilonzor Tantanalar Saroyi (Chilonzor)",
+      "price": 740000,
+      "image": "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+      "images": [
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Chilonzor tumani, Markaziy ko'cha 24",
+      "description": "Chilonzor Tantanalar Saroyi (Chilonzor) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 642 35 62",
+      "status": "tasdiqlangan",
+      "capacity": 700,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 36,
+      "tuman": "Chilonzor",
+      "title": "Chilonzor Grand Hall (Chilonzor)",
+      "price": 570000,
+      "image": "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+      "images": [
+        "https://sarbon-restaurant.uz/_next/image?url=%2Fhalls%2Fmain%2Fmain-2.webp&w=3840&q=75",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Chilonzor tumani, Markaziy ko'cha 126",
+      "description": "Chilonzor Grand Hall (Chilonzor) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 290 42 62",
+      "status": "tasdiqlangan",
+      "capacity": 150,
+      "ownerId": 2,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    },
+    {
+      "id": 37,
+      "tuman": "Chilonzor",
+      "title": "Chilonzor Royal Palace (Chilonzor)",
+      "price": 530000,
+      "image": "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+      "images": [
+        "https://avatars.mds.yandex.net/get-altay/12548008/2a0000018f1a4963f2f61c9bd236bec1e9d6/L_height",
+        "https://thumbs.dreamstime.com/b/luxury-banquet-hall-scene-luxurious-adorned-elegant-chandeliers-ornate-columns-floral-arrangements-creating-opulent-405088627.jpg"
+      ],
+      "location": "Toshkent shahri, Chilonzor tumani, Markaziy ko'cha 117",
+      "description": "Chilonzor Royal Palace (Chilonzor) — zamonaviy uslubda bezatilgan, yuqori saviyadagi to'ylar va marosimlar uchun hashamatli va qulay maskan.",
+      "phoneNumber": "+998 90 699 35 55",
+      "status": "tasdiqlangan",
+      "capacity": 250,
+      "ownerId": 3,
+      "currency": "UZS",
+      "menu": {
+        "suyuq": [
+          "Chuchvara",
+          "Mastava",
+          "Sho'rva"
+        ],
+        "quyuq": [
+          "To'y Palovi",
+          "Qozon Kabob",
+          "Vaguri"
+        ]
+      },
+      "xonandalar": [
+        {
+          "ism": "Jahongir Otajonov",
+          "narx": "35,000,000"
+        },
+        {
+          "ism": "Munisa Rizayeva",
+          "narx": "32,000,000"
+        }
+      ],
+      "karnaySurnay": {
+        "mavjud": true,
+        "narx": "2,000,000"
+      },
+      "mashinalar": [
+        {
+          "brand": "Mercedes-Benz G-Class (Gelandewagen)",
+          "price": "3,000,000"
+        },
+        {
+          "brand": "Rolls-Royce Ghost",
+          "price": "7,000,000"
+        }
+      ],
+      "bronKunlar": [
+        12,
+        18,
+        25
+      ]
+    }
+  ],
+  "bookings": [
+    {
+      "id": 1,
+      "toyxonaId": 1,
+      "toyxonaTitle": "Sarbon To'yxonasi",
+      "tuman": "Bektemir",
+      "sana": "15",
+      "odamSoni": 300,
+      "user": {
+        "ism": "Jasur",
+        "familiya": "Rahimov",
+        "raqam": "+998 90 999 88 77",
+        "userId": 1
+      },
+      "xizmatlar": [
+        "Karnay-surnay xizmati"
+      ],
+      "status": "bo'lib o'tgan"
+    },
+    {
+      "id": 2,
+      "toyxonaId": 2,
+      "toyxonaTitle": "Oq saroy To'yxonasi",
+      "tuman": "Bektemir",
+      "sana": "23",
+      "odamSoni": 250,
+      "user": {
+        "ism": "Anvar",
+        "familiya": "Karimov",
+        "raqam": "+998 90 111 22 33"
+      },
+      "xizmatlar": [],
+      "status": "endi bo'ladigan"
+    }
+  ]
+}
