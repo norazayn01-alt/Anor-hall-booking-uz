@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ToyxonaCard } from "@/app/components/toyxonaCard";
+import { ToyxonaCard } from "@/components/ToyxonaCard";
 import { ToyxonaType } from "@/lib/db";
 import { use } from "react";
 import { motion } from "framer-motion";

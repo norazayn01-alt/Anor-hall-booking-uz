@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import Logo from "./logo";
+import Logo from "./Logo";
 import { DISTRICTS, getDistrictSlug } from "@/lib/districts";
 import type { UserType, BookingType } from "@/lib/db";
 import OwnerSidebar from "./OwnerSidebar";
