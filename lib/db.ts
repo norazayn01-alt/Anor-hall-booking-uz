@@ -507,7 +507,7 @@ async function initializeDatabase() {
   }
 }
 
-initializeDatabase();
+// initializeDatabase();
 
 import { DISTRICTS, getDistrictSlug } from "./districts";
 export { DISTRICTS, getDistrictSlug };
