@@ -6,7 +6,7 @@ import Link from "next/link";
 interface ServiceItem {
   id: number;
   name: { uz: string; ru: string };
-  category: "kortej" | "music" | "decor" | "bouquet";
+  category: "kortej" | "music" | "decor" | "bouquet" | "women" | "men";
   subCategory?: { uz: string; ru: string }; // e.g. "Ekonom", "Komfort", "Lyuks"
   price: { uz: string; ru: string };
   image: string;
@@ -22,9 +22,11 @@ const translations = {
     tabs: {
       all: "BARCHASI",
       kortej: "KORTEJ (MASHINALAR)",
-      music: "KARNAY-SURNAY",
+      music: "KARNAY-SURNAY VA XONANDALAR",
       decor: "UY DEKORATSIYASI",
-      bouquet: "KELIN GULDASTASI"
+      bouquet: "KELIN GULDASTASI",
+      women: "AYOLLAR UCHUN",
+      men: "ERKAKLAR UCHUN"
     }
   },
   ru: {
@@ -35,9 +37,11 @@ const translations = {
     tabs: {
       all: "ВСЕ",
       kortej: "КОРТЕЖ (МАШИНЫ)",
-      music: "КАРНАЙ-СУРНАЙ",
+      music: "КАРНАЙ-СУРНАЙ И ПЕВИЦЫ",
       decor: "ДЕКОР ДОМА",
-      bouquet: "БУКЕТ НЕВЕСТЫ"
+      bouquet: "БУКЕТ НЕВЕСТЫ",
+      women: "ДЛЯ ЖЕНЩИН",
+      men: "ДЛЯ МУЖЧИН"
     }
   }
 };
@@ -88,7 +92,9 @@ export default function ServicesPage() {
     { id: "kortej", label: t.tabs.kortej },
     { id: "music", label: t.tabs.music },
     { id: "decor", label: t.tabs.decor },
-    { id: "bouquet", label: t.tabs.bouquet }
+    { id: "bouquet", label: t.tabs.bouquet },
+    { id: "women", label: t.tabs.women },
+    { id: "men", label: t.tabs.men }
   ];
 
   return (

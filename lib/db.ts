@@ -169,6 +169,83 @@ async function seedTables() {
             ru: "Роскошный букет, созданный с использованием редких импортных пионов, нежных орхидей и специальных лент.",
           },
         },
+        {
+          name: { uz: "Eksklyuziv Kelin Libosi (Oq)", ru: "Эксклюзивное свадебное платье (Белое)" },
+          category: "women",
+          sub_category: { uz: "Kelin Liboslar", ru: "Свадебные платья" },
+          price: { uz: "3,500,000 so'm / kun", ru: "3,500,000 сум / день" },
+          image: "https://i.pinimg.com/736x/35/6b/ea/356beaf1c02ab84d4daff1dcdaebfc64.jpg",
+          description: {
+            uz: "Zamonaviy dizayndagi, qo'l mehnati bilan bezatilgan va hashamatli oq kelinlik libosi.",
+            ru: "Роскошное белое свадебное платье современного дизайна, украшенное ручной работой."
+          }
+        },
+        {
+          name: { uz: "Kelin Salom Milliy Ansambli", ru: "Национальный ансамбль Келин Салом" },
+          category: "women",
+          sub_category: { uz: "Milliy Liboslar", ru: "Национальные наряды" },
+          price: { uz: "1,800,000 so'm / kun", ru: "1,800,000 сум / день" },
+          image: "https://i.pinimg.com/736x/55/f1/b7/55f1b72eddf2fb2d1e041cd4baeb7a7e.jpg",
+          description: {
+            uz: "Kelin salom marosimi uchun mo'ljallangan, milliy naqshlar bilan tikilgan an'anaviy zarbof liboslar to'plami.",
+            ru: "Традиционный набор одежды с национальными узорами, предназначенный для церемонии келин салом."
+          }
+        },
+        {
+          name: { uz: "Professional Kelin Makiyaji va Soch Turmagi", ru: "Профессиональный свадебный макияж и прическа" },
+          category: "women",
+          sub_category: { uz: "Stilist va Vizajist", ru: "Стилист и Визажист" },
+          price: { uz: "2,000,000 so'm", ru: "2,000,000 сум" },
+          image: "https://i.pinimg.com/736x/6f/30/16/6f30164c0525287f3b89098bc19d36ea.jpg",
+          description: {
+            uz: "To'y kuningizda eng go'zal ko'rinishga ega bo'lishingiz uchun professional vizajist va soch ustalarining maxsus xizmati.",
+            ru: "Специальные услуги профессионального визажиста и парикмахера, чтобы вы выглядели неотразимо в день свадьбы."
+          }
+        },
+        {
+          name: { uz: "Kelin Salom Xonanda Ayollari (Guruh)", ru: "Женская группа исполнительниц Келин Салом" },
+          category: "music",
+          sub_category: null,
+          price: { uz: "1,500,000 so'm", ru: "1,500,000 сум" },
+          image: "https://i.pinimg.com/736x/2d/a2/29/2da229a5ec13d80a153be415f3e9365c.jpg",
+          description: {
+            uz: "To'yda kelin salom marosimini milliy ohanglar, qo'shiqlar va maxsus ko'rinishlar bilan o'tkazib beruvchi professional xonandalar guruhi.",
+            ru: "Профессиональная женская группа певиц, которая проведет церемонию келин салом под национальные мелодии, песни и специальные выступления."
+          }
+        },
+        {
+          name: { uz: "Ijaraga Oqshom Ko'ylaklari", ru: "Вечерние платья напрокат" },
+          category: "women",
+          sub_category: { uz: "Dugonalar uchun", ru: "Для подружек невесты" },
+          price: { uz: "400,000 so'm dan / kun", ru: "от 400,000 сум / день" },
+          image: "https://i.pinimg.com/736x/1a/10/7c/1a107c1b4807a505bdf9ff15edb7d305.jpg",
+          description: {
+            uz: "Kelinning dugonalari va to'y mehmonlari uchun mos keladigan zamonaviy, bir xil dizayndagi oqshom ko'ylaklari ijarasi.",
+            ru: "Аренда современных одинаковых вечерних платьев, подходящих для подружек невесты и гостей свадьбы."
+          }
+        },
+        {
+          name: { uz: "Kuyov uchun Barber Xizmati", ru: "Услуги барбера для жениха" },
+          category: "men",
+          sub_category: { uz: "Erkaklar Saloni", ru: "Мужской салон" },
+          price: { uz: "500,000 so'm", ru: "500,000 сум" },
+          image: "https://i.pinimg.com/736x/14/b4/0b/14b40bd47a7465fbbbe28a6fcf7c7c0b.jpg",
+          description: {
+            uz: "To'y kuni kuyovlar uchun professional soch va soqol turmagi, yuz parvarishi hamda tayyorgarlik jarayoni.",
+            ru: "Профессиональная стрижка волос и бороды, уход за лицом и процесс подготовки жениха в день свадьбы."
+          }
+        },
+        {
+          name: { uz: "Kuyovlar uchun Kostyum-shim ijarasi", ru: "Прокат мужских костюмов для жениха" },
+          category: "men",
+          sub_category: { uz: "Kuyov Liboslari", ru: "Наряды жениха" },
+          price: { uz: "1,200,000 so'm / kun", ru: "1,200,000 сум / день" },
+          image: "https://i.pinimg.com/736x/2b/9b/77/2b9b7759d57a911a3df3ecba25838cf3.jpg",
+          description: {
+            uz: "Turkiya va Italiya brendlarining eng so'nggi urfdagi zamonaviy smoking hamda klassik kostyum-shimlari.",
+            ru: "Современные смокинги и классические костюмы по последней моде от турецких и итальянских брендов."
+          }
+        }
       ];
 
       for (const s of services) {

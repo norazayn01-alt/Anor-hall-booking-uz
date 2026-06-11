@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { isValidPhoneNumber, formatPhoneNumber, formatDateStr } from "@/lib/utils";
 import { getDistrictSlug } from "@/lib/districts";
 
-type TabType = "toyxonalar" | "egalar" | "bronlar" | "add_toyxona" | "add_owner" | "xabarlar";
+type TabType = "toyxonalar" | "egalar" | "bronlar" | "add_toyxona" | "add_owner" | "xabarlar" | "xizmatlar";
 
 type AdminMessageType = {
   id: number;
@@ -118,6 +118,31 @@ function AdminPageContent() {
     password: ""
   });
 
+  // Additional Services states
+  type ServiceItem = {
+    id: number;
+    name: { uz: string; ru: string };
+    category: string;
+    subCategory?: { uz: string; ru: string };
+    price: { uz: string; ru: string };
+    image: string;
+    desc: { uz: string; ru: string };
+  };
+  const [services, setServices] = useState<ServiceItem[]>([]);
+  const [servicesLoading, setServicesLoading] = useState(false);
+  const [editingService, setEditingService] = useState<ServiceItem | null>(null);
+  const [serviceFilterCat, setServiceFilterCat] = useState("all");
+  const emptyServiceForm = {
+    nameUz: "", nameRu: "",
+    category: "women",
+    subCategoryUz: "", subCategoryRu: "",
+    priceUz: "", priceRu: "",
+    image: "",
+    descUz: "", descRu: ""
+  };
+  const [serviceForm, setServiceForm] = useState(emptyServiceForm);
+  const [showAddService, setShowAddService] = useState(false);
+
   const tumanlar = [
     "Bektemir",
     "Mirobod",
@@ -152,7 +177,7 @@ function AdminPageContent() {
   // Read tab parameter from URL
   useEffect(() => {
     const tabParam = searchParams.get("tab") as TabType;
-    if (tabParam && ["toyxonalar", "egalar", "bronlar", "add_toyxona", "add_owner", "xabarlar"].includes(tabParam)) {
+    if (tabParam && ["toyxonalar", "egalar", "bronlar", "add_toyxona", "add_owner", "xabarlar", "xizmatlar"].includes(tabParam)) {
       setActiveTab(tabParam);
     }
   }, [searchParams]);
@@ -543,6 +568,104 @@ function AdminPageContent() {
     }
   };
 
+  // ─── Additional Services handlers ───────────────────────────────────────────
+  const loadServices = async () => {
+    setServicesLoading(true);
+    try {
+      const res = await fetch("/api/additional-services");
+      if (res.ok) setServices(await res.json());
+    } finally {
+      setServicesLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (authorized && activeTab === "xizmatlar") loadServices();
+  }, [authorized, activeTab]);
+
+  const handleAddService = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const { nameUz, nameRu, category, priceUz, priceRu, descUz, descRu } = serviceForm;
+    if (!nameUz || !nameRu || !category || !priceUz || !priceRu || !descUz || !descRu) {
+      alert("Barcha majburiy maydonlarni to'ldiring");
+      return;
+    }
+    const res = await fetch("/api/additional-services", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(serviceForm)
+    });
+    if (res.ok) {
+      alert("Xizmat muvaffaqiyatli qo'shildi!");
+      setServiceForm(emptyServiceForm);
+      setShowAddService(false);
+      loadServices();
+    } else {
+      alert("Xatolik yuz berdi");
+    }
+  };
+
+  const handleEditService = (s: ServiceItem) => {
+    setEditingService(s);
+    setServiceForm({
+      nameUz: s.name.uz,
+      nameRu: s.name.ru,
+      category: s.category,
+      subCategoryUz: s.subCategory?.uz || "",
+      subCategoryRu: s.subCategory?.ru || "",
+      priceUz: s.price.uz,
+      priceRu: s.price.ru,
+      image: s.image || "",
+      descUz: s.desc.uz,
+      descRu: s.desc.ru
+    });
+    setShowAddService(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleUpdateService = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingService) return;
+    const { nameUz, nameRu, category, priceUz, priceRu, descUz, descRu } = serviceForm;
+    if (!nameUz || !nameRu || !category || !priceUz || !priceRu || !descUz || !descRu) {
+      alert("Barcha majburiy maydonlarni to'ldiring");
+      return;
+    }
+    const res = await fetch("/api/additional-services", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: editingService.id, ...serviceForm })
+    });
+    if (res.ok) {
+      alert("Xizmat yangilandi!");
+      setEditingService(null);
+      setServiceForm(emptyServiceForm);
+      setShowAddService(false);
+      loadServices();
+    } else {
+      alert("Xatolik yuz berdi");
+    }
+  };
+
+  const handleDeleteService = async (id: number) => {
+    if (!confirm("Bu xizmatni o'chirasizmi?")) return;
+    const res = await fetch(`/api/additional-services?id=${id}`, { method: "DELETE" });
+    if (res.ok) {
+      alert("Xizmat o'chirildi!");
+      loadServices();
+    }
+  };
+
+  const serviceCategoryLabels: Record<string, string> = {
+    all: "Barchasi",
+    kortej: "Kortej (Mashinalar)",
+    music: "Karnay-Surnay va Xonandalar",
+    decor: "Uy Dekoratsiyasi",
+    bouquet: "Kelin Guldastasi",
+    women: "Ayollar uchun",
+    men: "Erkaklar uchun"
+  };
+
   if (!authorized) {
     return (
       <div className="p-8 text-center py-20 text-gray-400 font-bold animate-pulse bg-white min-h-screen flex items-center justify-center">
@@ -596,6 +719,12 @@ function AdminPageContent() {
               className={`py-2 px-4 rounded-xl font-semibold text-xs transition cursor-pointer ${activeTab === "xabarlar" ? "bg-green-800 text-white shadow-xs" : "text-gray-600 hover:bg-slate-50"}`}
             >
               Murojaatlar / Xabarlar
+            </button>
+            <button
+              onClick={() => { setActiveTab("xizmatlar"); setEditingToyxona(null); setShowAddService(false); setEditingService(null); setServiceForm(emptyServiceForm); }}
+              className={`py-2 px-4 rounded-xl font-semibold text-xs transition cursor-pointer ${activeTab === "xizmatlar" ? "bg-green-800 text-white shadow-xs" : "text-gray-600 hover:bg-slate-50"}`}
+            >
+              Qo'shimcha Xizmatlar
             </button>
           </div>
         </div>
@@ -1758,6 +1887,251 @@ function AdminPageContent() {
                     )}
                   </div>
                 </div>
+              )}
+            </div>
+          )}
+
+          {/* ─── QO'SHIMCHA XIZMATLAR TAB ─────────────────────────────────── */}
+          {activeTab === "xizmatlar" && (
+            <div>
+              {/* Header */}
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+                <div>
+                  <h2 className="text-lg font-black text-green-950">Qo'shimcha Xizmatlar</h2>
+                  <p className="text-xs text-slate-400 mt-0.5">Jami: {services.length} ta xizmat</p>
+                </div>
+                <button
+                  onClick={() => { setShowAddService(!showAddService); setEditingService(null); setServiceForm(emptyServiceForm); }}
+                  className="px-5 py-2.5 bg-green-800 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition cursor-pointer shadow-sm"
+                >
+                  {showAddService ? "✕ Bekor qilish" : "+ Yangi xizmat qo'shish"}
+                </button>
+              </div>
+
+              {/* Add / Edit Form */}
+              {showAddService && (
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-8">
+                  <h3 className="font-bold text-green-950 text-sm mb-4">
+                    {editingService ? "Xizmatni tahrirlash" : "➕ Yangi xizmat qo'shish"}
+                  </h3>
+                  <form onSubmit={editingService ? handleUpdateService : handleAddService} className="space-y-4 text-sm">
+                    {/* Name UZ / RU */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Nomi (O'zbekcha) *</label>
+                        <input
+                          type="text"
+                          value={serviceForm.nameUz}
+                          onChange={e => setServiceForm({ ...serviceForm, nameUz: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Masalan: Kelin Libosi..."
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Nomi (Ruscha) *</label>
+                        <input
+                          type="text"
+                          value={serviceForm.nameRu}
+                          onChange={e => setServiceForm({ ...serviceForm, nameRu: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Например: Платье невесты..."
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Category */}
+                    <div>
+                      <label className="block text-xs font-bold text-gray-500 mb-1">Kategoriya *</label>
+                      <select
+                        value={serviceForm.category}
+                        onChange={e => setServiceForm({ ...serviceForm, category: e.target.value })}
+                        className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                      >
+                        <option value="women">Ayollar uchun</option>
+                        <option value="men">Erkaklar uchun</option>
+                        <option value="music">Karnay-Surnay va Xonandalar</option>
+                        <option value="kortej">Kortej (Mashinalar)</option>
+                        <option value="decor">Uy Dekoratsiyasi</option>
+                        <option value="bouquet">Kelin Guldastasi</option>
+                      </select>
+                    </div>
+
+                    {/* Sub-category UZ / RU */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Ichki toifa (O'zbekcha, ixtiyoriy)</label>
+                        <input
+                          type="text"
+                          value={serviceForm.subCategoryUz}
+                          onChange={e => setServiceForm({ ...serviceForm, subCategoryUz: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Masalan: Kelin Liboslar"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Ichki toifa (Ruscha, ixtiyoriy)</label>
+                        <input
+                          type="text"
+                          value={serviceForm.subCategoryRu}
+                          onChange={e => setServiceForm({ ...serviceForm, subCategoryRu: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Например: Свадебные платья"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Price UZ / RU */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Narxi (O'zbekcha) *</label>
+                        <input
+                          type="text"
+                          value={serviceForm.priceUz}
+                          onChange={e => setServiceForm({ ...serviceForm, priceUz: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Masalan: 1,500,000 so'm"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Narxi (Ruscha) *</label>
+                        <input
+                          type="text"
+                          value={serviceForm.priceRu}
+                          onChange={e => setServiceForm({ ...serviceForm, priceRu: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Например: 1,500,000 сум"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    {/* Image URL */}
+                    <div>
+                      <label className="block text-xs font-bold text-gray-500 mb-1">Rasm URL (ixtiyoriy)</label>
+                      <input
+                        type="text"
+                        value={serviceForm.image}
+                        onChange={e => setServiceForm({ ...serviceForm, image: e.target.value })}
+                        className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                        placeholder="https://..."
+                      />
+                    </div>
+
+                    {/* Description UZ / RU */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Tavsif (O'zbekcha) *</label>
+                        <textarea
+                          value={serviceForm.descUz}
+                          onChange={e => setServiceForm({ ...serviceForm, descUz: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm resize-none"
+                          rows={3}
+                          placeholder="Xizmat haqida qisqacha..."
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Tavsif (Ruscha) *</label>
+                        <textarea
+                          value={serviceForm.descRu}
+                          onChange={e => setServiceForm({ ...serviceForm, descRu: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm resize-none"
+                          rows={3}
+                          placeholder="Описание на русском..."
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="flex gap-3 pt-2">
+                      <button
+                        type="submit"
+                        className="px-6 py-2.5 bg-green-800 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition cursor-pointer"
+                      >
+                        {editingService ? "Saqlash" : "Qo'shish"}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => { setShowAddService(false); setEditingService(null); setServiceForm(emptyServiceForm); }}
+                        className="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition cursor-pointer"
+                      >
+                        Bekor qilish
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
+
+              {/* Category Filter */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {Object.entries(serviceCategoryLabels).map(([key, label]) => (
+                  <button
+                    key={key}
+                    onClick={() => setServiceFilterCat(key)}
+                    className={`px-3 py-1.5 text-[11px] font-bold rounded-lg transition cursor-pointer ${serviceFilterCat === key ? "bg-green-800 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}
+                  >
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Services List */}
+              {servicesLoading ? (
+                <div className="text-center py-16 text-gray-400 font-bold animate-pulse">Yuklanmoqda...</div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {services
+                    .filter(s => serviceFilterCat === "all" || s.category === serviceFilterCat)
+                    .map(s => (
+                      <div key={s.id} className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition group">
+                        {/* Image */}
+                        {s.image && (
+                          <div className="h-40 overflow-hidden bg-slate-100">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={s.image} alt={s.name.uz} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                          </div>
+                        )}
+                        <div className="p-4">
+                          {/* Category badge */}
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-[9px] font-black bg-green-100 text-green-800 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                              {serviceCategoryLabels[s.category] || s.category}
+                            </span>
+                            {s.subCategory && (
+                              <span className="text-[9px] font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full">
+                                {s.subCategory.uz}
+                              </span>
+                            )}
+                          </div>
+                          <h4 className="font-extrabold text-sm text-slate-800 mb-1 line-clamp-1">{s.name.uz}</h4>
+                          <p className="text-xs text-slate-400 line-clamp-2 mb-3">{s.desc.uz}</p>
+                          <div className="flex items-center justify-between border-t border-slate-50 pt-3">
+                            <span className="text-xs font-extrabold text-amber-700">{s.price.uz}</span>
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => handleEditService(s)}
+                                className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] font-bold rounded-lg transition cursor-pointer"
+                              >
+                                Tahrirlash
+                              </button>
+                              <button
+                                onClick={() => handleDeleteService(s.id)}
+                                className="px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-600 text-[10px] font-bold rounded-lg transition cursor-pointer"
+                              >
+                                O'chirish
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              )}
+              {!servicesLoading && services.filter(s => serviceFilterCat === "all" || s.category === serviceFilterCat).length === 0 && (
+                <div className="text-center py-16 text-slate-400 text-sm">Bu kategoriyada hech qanday xizmat yo'q</div>
               )}
             </div>
           )}
