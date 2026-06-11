@@ -587,6 +587,223 @@ async function initializeDatabase() {
 // initializeDatabase();
 
 // ─── Xizmat Ko'rsatuvchilar uchun Migration ──────────────────────────────────
+async function seedServiceProviders() {
+  try {
+    const check = await pool.query("SELECT 1 FROM service_providers LIMIT 1");
+    if (check.rows.length === 0) {
+      const sampleProviders = [
+        // Category: women (Ayollar uchun)
+        {
+          name: "Aruuz Bridal Salon",
+          category: "women",
+          sub_category: "Kelin ko'ylaklar",
+          description: "Eng so'nggi rusumdagi hashamatli va nafis kelin ko'ylaklari ijarasi. Bizda har bir kelin o'ziga xos malika kabi porlaydi. Premium fransuz to'rlari va qo'lda ishlangan naqshlar.",
+          phone: "+998 90 999 11 22",
+          address: "Toshkent sh., Chilonzor tumani, 9-kvartal",
+          images: [
+            "https://i.pinimg.com/736x/35/6b/ea/356beaf1c02ab84d4daff1dcdaebfc64.jpg",
+            "https://i.pinimg.com/736x/1a/10/7c/1a107c1b4807a505bdf9ff15edb7d305.jpg"
+          ],
+          price_per_session: "3,500,000 so'm"
+        },
+        {
+          name: "Anor Couture & Bridal",
+          category: "women",
+          sub_category: "Kelin ko'ylaklar",
+          description: "Sizning orzuingizdagi kelinlik libosi. Eksklyuziv dizayn, buyurtma asosida tikish va ijara xizmati. Biz har bir kelinning individualligini qadrlaymiz.",
+          phone: "+998 94 888 33 44",
+          address: "Toshkent sh., Yunusobod tumani, 4-mavze",
+          images: [
+            "https://i.pinimg.com/736x/55/f1/b7/55f1b72eddf2fb2d1e041cd4baeb7a7e.jpg",
+            "https://i.pinimg.com/736x/6f/30/16/6f30164c0525287f3b89098bc19d36ea.jpg"
+          ],
+          price_per_session: "4,200,000 so'm"
+        },
+        {
+          name: "Zarboft Milliy Liboslar Guruhi",
+          category: "women",
+          sub_category: "Ansambllar",
+          description: "Kelin salom marosimlari va milliy tadbirlar uchun an'anaviy, zarbof naqshli liboslar ansambli. Kelinlar va dugonalar uchun maxsus milliy sarpolar.",
+          phone: "+998 97 777 55 66",
+          address: "Toshkent sh., Shayxontohur tumani, Navoiy ko'chasi",
+          images: [
+            "https://i.pinimg.com/736x/55/f1/b7/55f1b72eddf2fb2d1e041cd4baeb7a7e.jpg"
+          ],
+          price_per_session: "1,800,000 so'm"
+        },
+        {
+          name: "Bella Makeup & Hair Studio",
+          category: "women",
+          sub_category: "Stilist va vizajist",
+          description: "To'y kuningizda eng go'zal va takrorlanmas makiyaj hamda soch turmagi. Nufuzli jahon brendlari kosmetikalari va professional ustalar xizmati.",
+          phone: "+998 93 555 77 88",
+          address: "Toshkent sh., Yakkasaroy tumani, Shota Rustaveli ko'chasi",
+          images: [
+            "https://i.pinimg.com/736x/6f/30/16/6f30164c0525287f3b89098bc19d36ea.jpg"
+          ],
+          price_per_session: "2,000,000 so'm"
+        },
+        {
+          name: "Liana Bridesmaids Dress",
+          category: "women",
+          sub_category: "Dugonalar uchun kiyimlar",
+          description: "Kelinning dugonalari uchun bir xil uslubdagi oqshom ko'ylaklari ijarasi. Keng ranglar palitrasi va barcha o'lchamdagi ko'ylaklar mavjud.",
+          phone: "+998 99 444 88 99",
+          address: "Toshkent sh., Uchtepa tumani, Lutfiy ko'chasi",
+          images: [
+            "https://i.pinimg.com/736x/1a/10/7c/1a107c1b4807a505bdf9ff15edb7d305.jpg"
+          ],
+          price_per_session: "600,000 so'm"
+        },
+        // Category: men (Erkaklar uchun)
+        {
+          name: "Gentleman Kuyov Liboslari",
+          category: "men",
+          sub_category: "Kuyov liboslari",
+          description: "Turkiya va Italiya brendlarining eng so'nggi urfdagi smoking va klassik kostyum-shimlari ijarasi va sotuvi. Kuyovlar uchun to'liq aksessuarlar to'plami.",
+          phone: "+998 90 111 22 33",
+          address: "Toshkent sh., Chilonzor tumani, Lutfiy ko'chasi",
+          images: [
+            "https://i.pinimg.com/736x/2b/9b/77/2b9b7759d57a911a3df3ecba25838cf3.jpg"
+          ],
+          price_per_session: "1,500,000 so'm"
+        },
+        {
+          name: "Imperator Barber Shop",
+          category: "men",
+          sub_category: "Barber xizmatlari",
+          description: "Kuyovlar uchun to'y kuni maxsus soch va soqol turmaklash xizmati. Premium yuz parvarishi, piling va spa-muolajalar.",
+          phone: "+998 93 222 33 44",
+          address: "Toshkent sh., Yunusobod tumani, Amir Temur ko'chasi",
+          images: [
+            "https://i.pinimg.com/736x/14/b4/0b/14b40bd47a7465fbbbe28a6fcf7c7c0b.jpg"
+          ],
+          price_per_session: "600,000 so'm"
+        },
+        // Category: music (Karnay-Surnay va Xonandalar)
+        {
+          name: "Sado Milliy Karnay-Surnay Guruhi",
+          category: "music",
+          sub_category: "Karnay-Surnay",
+          description: "To'yxonada va kelin-kuyov xonadonida mehmonlarni tantanali kutib olish. Royal uslubidagi chiqishlar va milliy liboslardagi 6-8 kishilik guruh.",
+          phone: "+998 97 123 45 67",
+          address: "Toshkent sh., Shayxontohur tumani",
+          images: [
+            "https://frankfurt.apollo.olxcdn.com/v1/files/6bgrbdxoih3o2-UZ/image;s=1080x1080"
+          ],
+          price_per_session: "1,500,000 so'm"
+        },
+        {
+          name: "Rayxon Kelin Salom Guruhi",
+          category: "music",
+          sub_category: "Xonandalar va guruhlar",
+          description: "Kelin salom marosimini yuqori darajada, milliy qo'shiqlar va go'zal tabrik she'rlari ostida o'tkazib beruvchi ayol sozandalar va xonandalar guruhi.",
+          phone: "+998 94 333 44 55",
+          address: "Toshkent sh., Olmazor tumani",
+          images: [
+            "https://i.pinimg.com/736x/2d/a2/29/2da229a5ec13d80a153be415f3e9365c.jpg"
+          ],
+          price_per_session: "1,800,000 so'm"
+        },
+        // Category: kortej (Kortej (Mashinalar))
+        {
+          name: "VIP Kortej Mercedes & Rolls-Royce",
+          category: "kortej",
+          sub_category: "Premium Mashinalar",
+          description: "Eng hashamatli Mercedes-Benz S-class (W222, W223) va Rolls-Royce avtomobillarini to'ylar uchun ijaraga berish. Professional, klassik kiyingan haydovchilar xizmati.",
+          phone: "+998 90 777 88 99",
+          address: "Toshkent sh., Yakkasaroy tumani",
+          images: [
+            "https://seo-cms.autoscout24.ch/wp-content/uploads/2025/03/611871B.jpg"
+          ],
+          price_per_session: "3,000,000 so'm"
+        },
+        {
+          name: "Malibu & Gentra Kortej Xizmati",
+          category: "kortej",
+          sub_category: "Komfort & Ekonom",
+          description: "Kuyov-navkarlar va to'y mehmonlari uchun oq rangdagi bir xil Malibu 2 hamda Gentra avtomobillari karvoni. Qulay narx va sifatli xizmat.",
+          phone: "+998 93 444 55 66",
+          address: "Toshkent sh., Chilonzor tumani",
+          images: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYEAVYuRkj0S2DLiBYXrKHqzybVLkzJKfDpf17-ZCt4g&s=10"
+          ],
+          price_per_session: "800,000 so'm"
+        },
+        // Category: decor (Uy Dekoratsiyasi)
+        {
+          name: "Orzu Uy Dekorlari",
+          category: "decor",
+          sub_category: "Xonadon bezaklari",
+          description: "Kelin va kuyov uylarini to'y arafasida va to'y kuni go'zal va fayzli qilib bezash. Darvozalar, xonalar va hovlilarga to'yona bezaklar va gullar o'rnatish.",
+          phone: "+998 95 111 55 66",
+          address: "Toshkent sh., Olmazor tumani",
+          images: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEikzAmL-XNhkHCmU90q2ao45YPS0Cx49yHuCeS7cdchtHC0IaC1SSk3ST&s=10"
+          ],
+          price_per_session: "2,500,000 so'm"
+        },
+        {
+          name: "Golden Light LED & Photozone",
+          category: "decor",
+          sub_category: "LED va Fotozona",
+          description: "Premium toifadagi jonli va sun'iy gullardan yasalgan fotozonalar, LED neon chiroqlar va maxsus chiroqlar bilan uyingizda ajoyib to'y atmosferasini yaratamiz.",
+          phone: "+998 99 777 00 11",
+          address: "Toshkent sh., Mirobod tumani",
+          images: [
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJ0sGPc6dDPbbjI8ynhdLIz51LjxBax57sb5DN7SgAXjBZVmanAt5GvbZY&s=10"
+          ],
+          price_per_session: "4,500,000 so'm"
+        },
+        // Category: bouquet (Kelin Guldastasi)
+        {
+          name: "Flora Classy Kelin Guldastalari",
+          category: "bouquet",
+          sub_category: "Klassik guldastalar",
+          description: "Nafis oq atirgullar, gypsophilalar va maxsus yashil barglardan iborat klassik kelin guldastalari. To'y kuni kelinning go'zalligiga go'zallik qo'shadi.",
+          phone: "+998 90 333 77 88",
+          address: "Toshkent sh., Chilonzor tumani",
+          images: [
+            "https://i.pinimg.com/webp/1200x/9b/26/a8/9b26a8fd94a9b30eb87031982ce259bd.webp"
+          ],
+          price_per_session: "450,000 so'm"
+        },
+        {
+          name: "Royal Peon & Bouquet",
+          category: "bouquet",
+          sub_category: "Eksklyuziv guldastalar",
+          description: "Import qilingan Gollandiya peonlari, ekzotik orxideya va nozik atirgullardan tayyorlangan qirollik uslubidagi eksklyuziv guldastalari. Maxsus dizaynerlik ishi.",
+          phone: "+998 97 111 22 33",
+          address: "Toshkent sh., Yakkasaroy tumani",
+          images: [
+            "https://i.pinimg.com/webp/736x/00/7c/ad/007cad0eb0bb0fbe5681af320e549026.webp"
+          ],
+          price_per_session: "1,200,000 so'm"
+        }
+      ];
+
+      for (const p of sampleProviders) {
+        await pool.query(
+          `INSERT INTO service_providers (name, category, sub_category, description, phone, address, images, price_per_session)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
+          [
+            p.name,
+            p.category,
+            p.sub_category,
+            p.description,
+            p.phone,
+            p.address,
+            JSON.stringify(p.images),
+            p.price_per_session
+          ]
+        );
+      }
+    }
+  } catch (err) {
+    console.error("Error seeding service_providers:", err);
+  }
+}
+
 export async function migrateServiceProviders() {
   try {
     await pool.query(`
@@ -617,6 +834,7 @@ export async function migrateServiceProviders() {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `);
+    await seedServiceProviders();
   } catch (err) {
     console.error("Error migrating service_providers tables:", err);
   }
