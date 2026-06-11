@@ -2010,16 +2010,45 @@ function AdminPageContent() {
                       </div>
                     </div>
 
-                    {/* Image URL */}
+                    {/* Image URL + Upload */}
                     <div>
-                      <label className="block text-xs font-bold text-gray-500 mb-1">Rasm URL (ixtiyoriy)</label>
-                      <input
-                        type="text"
-                        value={serviceForm.image}
-                        onChange={e => setServiceForm({ ...serviceForm, image: e.target.value })}
-                        className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
-                        placeholder="https://..."
-                      />
+                      <label className="block text-xs font-bold text-gray-500 mb-1">Rasm (ixtiyoriy)</label>
+                      <div className="flex gap-2">
+                        <input
+                          type="text"
+                          value={serviceForm.image}
+                          onChange={e => setServiceForm({ ...serviceForm, image: e.target.value })}
+                          className="flex-1 p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="https://... yoki qurilmadan yuklang"
+                        />
+                        <label className="px-4 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl cursor-pointer flex items-center justify-center shrink-0 border border-slate-200 transition">
+                          {uploading ? "Yuklanmoqda..." : " Yuklash"}
+                          <input
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            disabled={uploading}
+                            onChange={async (e) => {
+                              const file = e.target.files?.[0];
+                              if (!file) return;
+                              try {
+                                const url = await uploadFile(file);
+                                setServiceForm(prev => ({ ...prev, image: url }));
+                                alert("Rasm muvaffaqiyatli yuklandi!");
+                              } catch {
+                                alert("Rasm yuklashda xatolik yuz berdi");
+                              }
+                            }}
+                          />
+                        </label>
+                      </div>
+                      {/* Preview */}
+                      {serviceForm.image && (
+                        <div className="mt-2 w-24 h-24 rounded-xl overflow-hidden border border-slate-200 bg-slate-50">
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={serviceForm.image} alt="preview" className="w-full h-full object-cover" />
+                        </div>
+                      )}
                     </div>
 
                     {/* Description UZ / RU */}
