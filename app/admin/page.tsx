@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { isValidPhoneNumber, formatPhoneNumber, formatDateStr } from "@/lib/utils";
 import { getDistrictSlug } from "@/lib/districts";
 
-type TabType = "toyxonalar" | "egalar" | "bronlar" | "add_toyxona" | "add_owner" | "xabarlar" | "xizmatlar";
+type TabType = "toyxonalar" | "egalar" | "bronlar" | "add_toyxona" | "add_owner" | "xabarlar" | "xizmatlar" | "providers";
 
 type AdminMessageType = {
   id: number;
@@ -143,6 +143,23 @@ function AdminPageContent() {
   const [serviceForm, setServiceForm] = useState(emptyServiceForm);
   const [showAddService, setShowAddService] = useState(false);
 
+  // Providers state
+  type ProviderItem = {
+    id: number; name: string; category: string; subCategory?: string;
+    description?: string; phone: string; address?: string;
+    images: string[]; pricePerSession?: string; status: string;
+  };
+  const [providers, setProviders] = useState<ProviderItem[]>([]);
+  const [providersLoading, setProvidersLoading] = useState(false);
+  const [editingProvider, setEditingProvider] = useState<ProviderItem | null>(null);
+  const [providerFilterCat, setProviderFilterCat] = useState("all");
+  const [showAddProvider, setShowAddProvider] = useState(false);
+  const emptyProviderForm = {
+    name: "", category: "women", subCategory: "", description: "",
+    phone: "", address: "", imagesStr: "", pricePerSession: ""
+  };
+  const [providerForm, setProviderForm] = useState(emptyProviderForm);
+
   const tumanlar = [
     "Bektemir",
     "Mirobod",
@@ -177,7 +194,7 @@ function AdminPageContent() {
   // Read tab parameter from URL
   useEffect(() => {
     const tabParam = searchParams.get("tab") as TabType;
-    if (tabParam && ["toyxonalar", "egalar", "bronlar", "add_toyxona", "add_owner", "xabarlar", "xizmatlar"].includes(tabParam)) {
+    if (tabParam && ["toyxonalar", "egalar", "bronlar", "add_toyxona", "add_owner", "xabarlar", "xizmatlar", "providers"].includes(tabParam)) {
       setActiveTab(tabParam);
     }
   }, [searchParams]);
@@ -666,7 +683,83 @@ function AdminPageContent() {
     men: "Erkaklar uchun"
   };
 
+  // ─── Provider handlers ────────────────────────────────────────────────────
+  const loadProviders = async () => {
+    setProvidersLoading(true);
+    try {
+      const res = await fetch("/api/service-providers");
+      if (res.ok) {
+        const data = await res.json();
+        setProviders(data.map((p: { id: number; name: string; category: string; subCategory?: string; description?: string; phone: string; address?: string; images: string[]; pricePerSession?: string; status: string }) => ({
+          ...p, images: p.images || []
+        })));
+      }
+    } finally {
+      setProvidersLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    if (authorized && activeTab === "providers") loadProviders();
+  }, [authorized, activeTab]);
+
+  const handleAddProvider = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!providerForm.name || !providerForm.category || !providerForm.phone) {
+      alert("Ism, kategoriya va telefon majburiy"); return;
+    }
+    const images = providerForm.imagesStr.split(",").map(s => s.trim()).filter(Boolean);
+    const res = await fetch("/api/service-providers", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...providerForm, images, subCategory: providerForm.subCategory || undefined })
+    });
+    if (res.ok) {
+      alert("Xizmat ko'rsatuvchi qo'shildi!");
+      setProviderForm(emptyProviderForm);
+      setShowAddProvider(false);
+      loadProviders();
+    } else alert("Xatolik yuz berdi");
+  };
+
+  const handleEditProvider = (p: ProviderItem) => {
+    setEditingProvider(p);
+    setProviderForm({
+      name: p.name, category: p.category,
+      subCategory: p.subCategory || "",
+      description: p.description || "",
+      phone: p.phone, address: p.address || "",
+      imagesStr: (p.images || []).join(", "),
+      pricePerSession: p.pricePerSession || ""
+    });
+    setShowAddProvider(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleUpdateProvider = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!editingProvider) return;
+    const images = providerForm.imagesStr.split(",").map(s => s.trim()).filter(Boolean);
+    const res = await fetch("/api/service-providers", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ id: editingProvider.id, ...providerForm, images })
+    });
+    if (res.ok) {
+      alert("Yangilandi!"); setEditingProvider(null);
+      setProviderForm(emptyProviderForm); setShowAddProvider(false);
+      loadProviders();
+    } else alert("Xatolik yuz berdi");
+  };
+
+  const handleDeleteProvider = async (id: number) => {
+    if (!confirm("Bu xizmat ko'rsatuvchini o'chirasizmi?")) return;
+    await fetch(`/api/service-providers?id=${id}`, { method: "DELETE" });
+    loadProviders();
+  };
+
   if (!authorized) {
+
     return (
       <div className="p-8 text-center py-20 text-gray-400 font-bold animate-pulse bg-white min-h-screen flex items-center justify-center">
         Tekshirilmoqda...
@@ -725,6 +818,12 @@ function AdminPageContent() {
               className={`py-2 px-4 rounded-xl font-semibold text-xs transition cursor-pointer ${activeTab === "xizmatlar" ? "bg-green-800 text-white shadow-xs" : "text-gray-600 hover:bg-slate-50"}`}
             >
               Qo'shimcha Xizmatlar
+            </button>
+            <button
+              onClick={() => { setActiveTab("providers"); setEditingToyxona(null); }}
+              className={`py-2 px-4 rounded-xl font-semibold text-xs transition cursor-pointer ${activeTab === "providers" ? "bg-green-800 text-white shadow-xs" : "text-gray-600 hover:bg-slate-50"}`}
+            >
+              Xizmat Ko'rsatuvchilar
             </button>
           </div>
         </div>
@@ -2163,6 +2262,176 @@ function AdminPageContent() {
               )}
               {!servicesLoading && services.filter(s => serviceFilterCat === "all" || s.category === serviceFilterCat).length === 0 && (
                 <div className="text-center py-16 text-slate-400 text-sm">Bu kategoriyada hech qanday xizmat yo'q</div>
+              )}
+            </div>
+          )}
+
+          {/* ─── XIZMAT KO'RSATUVCHILAR TAB ──────────────────────────────────── */}
+          {activeTab === "providers" && (
+            <div>
+              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 mb-6">
+                <div>
+                  <h2 className="text-lg font-black text-green-950">Xizmat Ko'rsatuvchilar</h2>
+                  <p className="text-xs text-slate-400 mt-0.5">Jami: {providers.length} ta</p>
+                </div>
+                <button
+                  onClick={() => { setShowAddProvider(!showAddProvider); setEditingProvider(null); setProviderForm(emptyProviderForm); }}
+                  className="px-5 py-2.5 bg-green-800 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition cursor-pointer shadow-sm"
+                >
+                  {showAddProvider ? "✕ Bekor qilish" : "+ Yangi qo'shish"}
+                </button>
+              </div>
+
+              {/* Add/Edit form */}
+              {showAddProvider && (
+                <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 mb-8">
+                  <h3 className="font-bold text-green-950 text-sm mb-4">
+                    {editingProvider ? "✏️ Tahrirlash" : "➕ Yangi xizmat ko'rsatuvchi"}
+                  </h3>
+                  <form onSubmit={editingProvider ? handleUpdateProvider : handleAddProvider} className="space-y-4 text-sm">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Nomi *</label>
+                        <input type="text" required value={providerForm.name}
+                          onChange={e => setProviderForm({ ...providerForm, name: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Salon yoki usta nomi" />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Telefon *</label>
+                        <input type="text" required value={providerForm.phone}
+                          onChange={e => setProviderForm({ ...providerForm, phone: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="+998 90 123 45 67" />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Kategoriya *</label>
+                        <select value={providerForm.category}
+                          onChange={e => setProviderForm({ ...providerForm, category: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm">
+                          <option value="women">Ayollar uchun</option>
+                          <option value="men">Erkaklar uchun</option>
+                          <option value="music">Karnay-Surnay va Xonandalar</option>
+                          <option value="kortej">Kortej (Mashinalar)</option>
+                          <option value="decor">Uy Dekoratsiyasi</option>
+                          <option value="bouquet">Kelin Guldastasi</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Ichki toifa (ixtiyoriy)</label>
+                        <input type="text" value={providerForm.subCategory}
+                          onChange={e => setProviderForm({ ...providerForm, subCategory: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Masalan: Kelin ko'ylaklar" />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Manzil</label>
+                        <input type="text" value={providerForm.address}
+                          onChange={e => setProviderForm({ ...providerForm, address: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Ko'cha, uy raqami" />
+                      </div>
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">3-soatlik narxi</label>
+                        <input type="text" value={providerForm.pricePerSession}
+                          onChange={e => setProviderForm({ ...providerForm, pricePerSession: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                          placeholder="Masalan: 500,000 so'm" />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-gray-500 mb-1">Tavsif</label>
+                      <textarea value={providerForm.description}
+                        onChange={e => setProviderForm({ ...providerForm, description: e.target.value })}
+                        className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm resize-none"
+                        rows={3} placeholder="Salon yoki usta haqida qisqacha..." />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-bold text-gray-500 mb-1">Rasmlar URL (vergul bilan)</label>
+                      <textarea value={providerForm.imagesStr}
+                        onChange={e => setProviderForm({ ...providerForm, imagesStr: e.target.value })}
+                        className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm resize-none"
+                        rows={2} placeholder="https://..., https://..., https://..." />
+                    </div>
+
+                    <div className="flex gap-3 pt-1">
+                      <button type="submit" className="px-6 py-2.5 bg-green-800 hover:bg-green-700 text-white text-xs font-bold rounded-xl transition cursor-pointer">
+                        {editingProvider ? "Saqlash" : "Qo'shish"}
+                      </button>
+                      <button type="button" onClick={() => { setShowAddProvider(false); setEditingProvider(null); setProviderForm(emptyProviderForm); }}
+                        className="px-6 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold rounded-xl transition cursor-pointer">
+                        Bekor qilish
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              )}
+
+              {/* Category Filter */}
+              <div className="flex flex-wrap gap-2 mb-6">
+                {Object.entries(serviceCategoryLabels).map(([key, label]) => (
+                  <button key={key} onClick={() => setProviderFilterCat(key)}
+                    className={`px-3 py-1.5 text-[11px] font-bold rounded-lg transition cursor-pointer ${providerFilterCat === key ? "bg-green-800 text-white" : "bg-slate-100 text-slate-600 hover:bg-slate-200"}`}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Providers list */}
+              {providersLoading ? (
+                <div className="text-center py-16 text-gray-400 font-bold animate-pulse">Yuklanmoqda...</div>
+              ) : (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {providers
+                    .filter(p => providerFilterCat === "all" || p.category === providerFilterCat)
+                    .map(p => (
+                      <div key={p.id} className="bg-white border border-slate-100 rounded-2xl overflow-hidden shadow-xs hover:shadow-md transition group">
+                        {p.images?.[0] && (
+                          <div className="h-40 overflow-hidden bg-slate-100">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={p.images[0]} alt={p.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                          </div>
+                        )}
+                        <div className="p-4">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-[9px] font-black bg-green-100 text-green-800 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                              {serviceCategoryLabels[p.category] || p.category}
+                            </span>
+                            {p.subCategory && (
+                              <span className="text-[9px] font-bold bg-amber-50 text-amber-700 px-2 py-0.5 rounded-full">{p.subCategory}</span>
+                            )}
+                          </div>
+                          <h4 className="font-extrabold text-sm text-slate-800 mb-1 line-clamp-1">{p.name}</h4>
+                          <p className="text-xs text-slate-400 mb-1">📞 {p.phone}</p>
+                          {p.address && <p className="text-xs text-slate-400 mb-3 line-clamp-1">📍 {p.address}</p>}
+                          <div className="flex items-center justify-between border-t border-slate-50 pt-3">
+                            <span className="text-xs font-extrabold text-amber-700">{p.pricePerSession || "—"}</span>
+                            <div className="flex gap-2">
+                              <button onClick={() => handleEditProvider(p)}
+                                className="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-[10px] font-bold rounded-lg transition cursor-pointer">
+                                ✏️ Tahrir
+                              </button>
+                              <button onClick={() => handleDeleteProvider(p.id)}
+                                className="px-3 py-1.5 bg-red-50 hover:bg-red-100 text-red-600 text-[10px] font-bold rounded-lg transition cursor-pointer">
+                                🗑 O'chir
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              )}
+              {!providersLoading && providers.filter(p => providerFilterCat === "all" || p.category === providerFilterCat).length === 0 && (
+                <div className="text-center py-16 text-slate-400 text-sm">Bu kategoriyada hech kim yo'q</div>
               )}
             </div>
           )}

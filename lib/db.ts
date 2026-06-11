@@ -586,6 +586,45 @@ async function initializeDatabase() {
 
 // initializeDatabase();
 
+// ─── Xizmat Ko'rsatuvchilar uchun Migration ──────────────────────────────────
+export async function migrateServiceProviders() {
+  try {
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS service_providers (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        category VARCHAR(50) NOT NULL,
+        sub_category VARCHAR(100),
+        description TEXT,
+        phone VARCHAR(50) NOT NULL,
+        address VARCHAR(255),
+        images JSONB DEFAULT '[]',
+        price_per_session VARCHAR(100),
+        status VARCHAR(20) DEFAULT 'active',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      CREATE TABLE IF NOT EXISTS service_bookings (
+        id SERIAL PRIMARY KEY,
+        provider_id INT REFERENCES service_providers(id) ON DELETE CASCADE,
+        booking_date DATE NOT NULL,
+        start_time VARCHAR(10) NOT NULL,
+        end_time VARCHAR(10) NOT NULL,
+        client_name VARCHAR(255) NOT NULL,
+        client_phone VARCHAR(50) NOT NULL,
+        note TEXT,
+        status VARCHAR(20) DEFAULT 'pending',
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+    `);
+  } catch (err) {
+    console.error("Error migrating service_providers tables:", err);
+  }
+}
+
+// Auto-run migration on import
+migrateServiceProviders();
+
 import { DISTRICTS, getDistrictSlug } from "./districts";
 export { DISTRICTS, getDistrictSlug };
 
