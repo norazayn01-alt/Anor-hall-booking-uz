@@ -1942,20 +1942,22 @@ function AdminPageContent() {
                     </div>
 
                     {/* Category */}
-                    <div>
-                      <label className="block text-xs font-bold text-gray-500 mb-1">Kategoriya *</label>
-                      <select
-                        value={serviceForm.category}
-                        onChange={e => setServiceForm({ ...serviceForm, category: e.target.value })}
-                        className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
-                      >
-                        <option value="women">Ayollar uchun</option>
-                        <option value="men">Erkaklar uchun</option>
-                        <option value="music">Karnay-Surnay va Xonandalar</option>
-                        <option value="kortej">Kortej (Mashinalar)</option>
-                        <option value="decor">Uy Dekoratsiyasi</option>
-                        <option value="bouquet">Kelin Guldastasi</option>
-                      </select>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-bold text-gray-500 mb-1">Kategoriya *</label>
+                        <select
+                          value={serviceForm.category}
+                          onChange={e => setServiceForm({ ...serviceForm, category: e.target.value })}
+                          className="w-full p-2.5 border border-slate-200 rounded-xl bg-white outline-none focus:border-green-700 text-sm"
+                        >
+                          <option value="women">Ayollar uchun</option>
+                          <option value="men">Erkaklar uchun</option>
+                          <option value="music">Karnay-Surnay va Xonandalar</option>
+                          <option value="kortej">Kortej (Mashinalar)</option>
+                          <option value="decor">Uy Dekoratsiyasi</option>
+                          <option value="bouquet">Kelin Guldastasi</option>
+                        </select>
+                      </div>
                     </div>
 
                     {/* Sub-category UZ / RU */}
